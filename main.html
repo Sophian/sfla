@@ -47,11 +47,11 @@ function login(form){
     session.ended(function(session){ ctrl.getVideoElement(session.number).remove(); }); // Call Ended
   }); // Called on incoming call/call ended
   
-  ctrl.videoToggled(function(session, isEnable){
+  ctrl.videoToggled(function(session, isEnabled){
     ctrl.getVideoElement(session.number).toggle(isEnable); // Hide video is stream paused
   });
   
-  ctrl.audioToggled(function(session, isEnable){
+  ctrl.audioToggled(function(session, isEnabled){
     ctrl.getVideoElement(session.number).css("opacity", isEnabled ? 1 : 0.75); // 0.75 opacity is audio muted
   });
 
@@ -64,7 +64,7 @@ function makeCall(form){
   if (phone.number()==num) return false; // No calling yourself!
   ctrl.isOnline(num, function(isOn) { // Check if other user is listening for calls
     if (isOn) ctrl.dial(num); // Dial if they are online
-    else alert("User if Offline"); // Alert if not
+    else alert("User is Offline"); // Alert if not
   });
   return false; // So form does not submit
 }
