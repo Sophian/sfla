@@ -26,7 +26,7 @@
 		},
 
 		onSuccess: function() {
-			document.getElementById("info").style.display = "none";
+			//document.getElementById("info").style.display = "none";
 
 			capturing = true;
 			document.getElementById("pause").style.display = "block";
@@ -42,12 +42,6 @@
 
 		onError: function(error) {
 			// TODO: log error
-		},
-
-		onNotSupported: function() {
-			document.getElementById("info").style.display = "none";
-			asciiContainer.style.display = "none";
-			document.getElementById("notSupported").style.display = "block";
 		}
 	});
 })();
